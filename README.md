@@ -63,14 +63,6 @@ GeoSample Explorer allows users to browse, filter, and manage field observations
 
 ---
 
-### Observation detail and form
-
-<!-- ![Detail and form](docs/screenshots/detail-form.png) -->
-
-*Screenshot: Selected observation details and add/edit form.*
-
----
-
 ### API documentation – Swagger UI
 
 ![GeoSample Explorer API – Swagger](assets/swagger-api.png)
@@ -227,4 +219,4 @@ The project was developed iteratively with an agile-style approach:
 
 ## License
 
-MIT
+MIT © Karine Heinonen. See [LICENSE](LICENSE) for the full text.
