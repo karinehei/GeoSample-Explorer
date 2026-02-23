@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+frontend/dist/
+backend/**/bin/
+backend/**/obj/
+
+# IDE
+.idea/
+.vs/
+*.user
+
+# Environment
+.env
+.env.local
+
+# SQLite
+*.db
+*.db-shm
+*.db-wal
+
+# Logs
+*.log
+npm-debug.log*

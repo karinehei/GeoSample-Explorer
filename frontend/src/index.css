@@ -1,0 +1,48 @@
+:root {
+  --color-text: #1a1a1a;
+  --color-text-muted: #666;
+  --color-bg: #f8f9fa;
+  --color-surface: #fff;
+  --color-border: #dee2e6;
+  --color-primary: #2563eb;
+  --color-error: #b91c1c;
+  --color-error-bg: #fef2f2;
+  --radius: 4px;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.5;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Focus visible for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.leaflet-container {
+  font-family: var(--font-sans);
+}
