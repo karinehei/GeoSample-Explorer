@@ -127,7 +127,7 @@ Workflows in `.github/workflows/`:
 
 - **frontend-build.yml** – Tests and builds the frontend on push/PR to `main` or `develop` (when `frontend/` changes).
 - **backend-build.yml** – Builds and tests the backend on push/PR (when `backend/` changes).
-- **pages.yml** – Manual GitHub Pages publication. It is not run by a push.
+- **pages.yml** – Manual GitHub Pages publication on Ubuntu 24.04. A push does not start it.
 
 ---
 
@@ -207,10 +207,10 @@ The project was developed iteratively with an agile-style approach:
 
 ## Future Improvements
 
-- **Deployment** – Host on Azure (App Service + Static Web Apps) or similar
+- **API hosting** – Host the observation API on Azure App Service or similar. The static regional view is published on GitHub Pages.
 - **Authentication** – JWT or OAuth for multi-user support
 - **Spatial database** – Migrate to PostgreSQL + PostGIS for advanced queries
-- **CI/CD** – GitHub Actions for build, test, and deploy
+- **Deploy automation** – Frontend and backend already build and test in GitHub Actions. Publishing the Pages site is still a manual workflow.
 - **Offline support** – PWA or service worker for field use
 
 ---
@@ -220,16 +220,6 @@ The project was developed iteratively with an agile-style approach:
 **Recent improvements:** Removed unused components (FilterBar, ObservationMap, api.ts); extracted shared logic (toRequestBody, formatDateTime, error styles); added backend validation for ObservedAt; reduced duplication in App.tsx.
 
 **Known limitations:** No authentication; SQLite not ideal for production scale; `window.confirm` for delete (consider a modal). Type and region dropdowns are filled from an unfiltered catalog. The regional map uses the geometry shipped in the source package; that geometry is not verified as the official 2019–2023 regional boundary.
-
----
-
-## Presenting to an Employer
-
-- **Full-stack demo** – React + TypeScript frontend, ASP.NET Core API, SQLite + EF Core, all in one repo.
-- **Production-minded** – Environment variables, configurable CORS, appsettings per environment, Azure deployment guide.
-- **Testing** – xUnit integration tests with WebApplicationFactory; CI workflows for frontend build and backend build/test.
-- **GeoJSON** – Standards-compliant endpoint for geospatial interoperability.
-- **Clean architecture** – Separate DTOs, validation, API layer; components with focused responsibilities.
 
 ---
 
@@ -253,13 +243,7 @@ npm run build
 
 Copy `frontend/dist` to a directory named `GeoSample-Explorer` and serve the parent directory. Open `/GeoSample-Explorer/`. It should land on the regional page. Reload a URL that includes `year` and `region`, then use Back and Forward.
 
-Publication is prepared in `.github/workflows/pages.yml` and is manual (`workflow_dispatch`). It has not been run, and the live site has not been checked from this review. To publish later:
-
-1. In the repository settings, set Pages to GitHub Actions.
-2. Run the “GitHub Pages” workflow.
-3. Open `https://karinehei.github.io/GeoSample-Explorer/`.
-
-That workflow uploads `frontend/dist` only. It does not include the source zip or the case files.
+The published site is that URL. `.github/workflows/pages.yml` stays manual (`workflow_dispatch`) and runs on Ubuntu 24.04. It builds and uploads `frontend/dist` only, without the source zip or the case files. To publish again, keep Pages set to GitHub Actions and run the “GitHub Pages” workflow.
 
 The case counts are © Työterveyslaitos, Työelämätieto, CC BY 4.0. The region geometry is MIT (Lucify 2017, FIOH 2018). See `frontend/public/worklife/GEOMETRY-LICENSE.txt`.
 
