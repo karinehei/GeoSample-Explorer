@@ -1,10 +1,19 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vitest/config'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
+  base: '/GeoSample-Explorer/',
   plugins: [react()],
   resolve: {
     alias: { '@': '/src' },
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        worklife: 'worklife-regions.html',
+      },
+    },
   },
   server: {
     port: 5173,
@@ -15,4 +24,8 @@ export default defineConfig({
       },
     },
   },
-});
+  test: {
+    environment: 'node',
+    include: ['src/**/*.test.ts'],
+  },
+})

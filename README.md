@@ -50,6 +50,7 @@ GeoSample Explorer allows users to browse, filter, and manage field observations
 - **Detail view** – Selected observation shows name, type, region, coordinates, observed date, description
 - **GeoJSON** – `GET /api/observations/geojson` returns RFC 7946 FeatureCollection for GIS integration
 - **URL state** – Filter state synced to query string for sharing
+- **Occupational-disease regions** – Separate read-only page of retained confirmed case counts by Finnish region and year, 2019–2023. It uses committed aggregates and does not call the API.
 
 ---
 
@@ -97,7 +98,8 @@ npm install
 npm run dev
 ```
 
-- App: `http://localhost:5173`
+- App: `http://localhost:5173/GeoSample-Explorer/`
+- Regional counts: `http://localhost:5173/GeoSample-Explorer/worklife-regions.html`
 
 ### Tests
 
@@ -106,12 +108,26 @@ cd backend
 dotnet test
 ```
 
+```bash
+cd frontend
+npm test
+```
+
+The regional counts can be rebuilt from the pinned zip and compared with the committed files:
+
+```bash
+python scripts/verify_worklife_regions.py --zip path/to/occupational-diseases-data-20052026.zip
+```
+
+`--write` replaces `frontend/public/worklife/` after the same checksum check. A different file size or SHA-256 stops before writing.
+
 ### CI (GitHub Actions)
 
 Workflows in `.github/workflows/`:
 
-- **frontend-build.yml** – Builds frontend on push/PR to `main` or `develop` (when `frontend/` changes).
-- **backend-build.yml** – Builds and tests backend on push/PR (when `backend/` changes).
+- **frontend-build.yml** – Tests and builds the frontend on push/PR to `main` or `develop` (when `frontend/` changes).
+- **backend-build.yml** – Builds and tests the backend on push/PR (when `backend/` changes).
+- **pages.yml** – Manual GitHub Pages publication. It is not run by a push.
 
 ---
 
@@ -203,7 +219,7 @@ The project was developed iteratively with an agile-style approach:
 
 **Recent improvements:** Removed unused components (FilterBar, ObservationMap, api.ts); extracted shared logic (toRequestBody, formatDateTime, error styles); added backend validation for ObservedAt; reduced duplication in App.tsx.
 
-**Known limitations:** No authentication; SQLite not ideal for production scale; `window.confirm` for delete (consider a modal); type/region dropdowns derived from filtered data (options shrink when filtering).
+**Known limitations:** No authentication; SQLite not ideal for production scale; `window.confirm` for delete (consider a modal). Type and region dropdowns are filled from an unfiltered catalog. The regional map uses the geometry shipped in the source package; that geometry is not verified as the official 2019–2023 regional boundary.
 
 ---
 
@@ -216,6 +232,30 @@ The project was developed iteratively with an agile-style approach:
 - **Clean architecture** – Separate DTOs, validation, API layer; components with focused responsibilities.
 
 ---
+
+## Regional counts on GitHub Pages
+
+The frontend `base` is `/GeoSample-Explorer/`. Both `index.html` and `worklife-regions.html` are Vite entry points. Public data is loaded with that base, so the regions page works without `VITE_API_BASE_URL`.
+
+Check the production build locally:
+
+```bash
+cd frontend
+npm test
+npm run build
+```
+
+Serve the `frontend/dist` directory as `/GeoSample-Explorer/` and open `worklife-regions.html`. Reload a URL that includes `year` and `region`, then use the browser Back and Forward buttons.
+
+Publication is prepared in `.github/workflows/pages.yml` and is manual (`workflow_dispatch`). It has not been run. To publish later:
+
+1. In the repository settings, set Pages to GitHub Actions.
+2. Run the “GitHub Pages” workflow.
+3. Open `https://karinehei.github.io/GeoSample-Explorer/worklife-regions.html`.
+
+The observation page on that host still needs a backend URL. The regions page does not.
+
+The case counts are © Työterveyslaitos, Työelämätieto, CC BY 4.0. The region geometry is MIT (Lucify 2017, FIOH 2018). See `frontend/public/worklife/GEOMETRY-LICENSE.txt`.
 
 ## License
 

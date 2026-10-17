@@ -1,0 +1,182 @@
+.worklife-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.worklife-header {
+  padding: 16px 24px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.worklife-header h1 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.worklife-header p {
+  margin: 0;
+  max-width: 70rem;
+}
+
+.worklife-header nav {
+  margin-top: 8px;
+}
+
+.worklife-body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.worklife-side {
+  width: 420px;
+  min-width: 300px;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  overflow: auto;
+  padding: 16px;
+}
+
+.worklife-map-wrap {
+  flex: 1;
+  min-width: 0;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+}
+
+.worklife-map {
+  flex: 1;
+  min-height: 420px;
+}
+
+.worklife-boundary {
+  margin: 0;
+  padding: 10px 16px;
+  background: #fff8e8;
+  border-top: 1px solid #e6d3a3;
+  font-size: 14px;
+}
+
+.worklife-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.worklife-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.worklife-controls select {
+  min-width: 180px;
+  padding: 6px 8px;
+}
+
+.worklife-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+}
+
+.worklife-table th,
+.worklife-table td {
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  padding: 6px 4px;
+  vertical-align: top;
+}
+
+.worklife-table button {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.worklife-table tr[aria-selected='true'] {
+  background: #e8f1fb;
+}
+
+.worklife-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 8px 0 16px;
+}
+
+.worklife-legend-title {
+  font-weight: 700;
+  margin: 0;
+}
+
+.worklife-swatch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.worklife-swatch i {
+  width: 28px;
+  height: 14px;
+  border: 1px solid #4b5563;
+  display: inline-block;
+}
+
+.worklife-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.worklife-actions button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.worklife-source {
+  font-size: 13px;
+}
+
+.worklife-source h2 {
+  font-size: 16px;
+}
+
+.worklife-note,
+.worklife-chart-notes {
+  font-size: 13px;
+}
+
+.worklife-chart svg {
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+
+@media (max-width: 860px) {
+  .worklife-body {
+    flex-direction: column;
+  }
+
+  .worklife-side {
+    width: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .worklife-map-wrap {
+    min-height: 420px;
+  }
+}

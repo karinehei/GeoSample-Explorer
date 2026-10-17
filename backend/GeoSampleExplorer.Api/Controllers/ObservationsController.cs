@@ -135,9 +135,9 @@ public class ObservationsController : ControllerBase
         if (!string.IsNullOrWhiteSpace(search))
             query = query.Where(o => o.Name.Contains(search));
         if (!string.IsNullOrWhiteSpace(type))
-            query = query.Where(o => o.Type.Contains(type));
+            query = query.Where(o => o.Type == type);
         if (!string.IsNullOrWhiteSpace(region))
-            query = query.Where(o => o.Region.Contains(region));
+            query = query.Where(o => o.Region == region);
         return query.OrderBy(o => o.Name);
     }
 

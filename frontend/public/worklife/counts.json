@@ -1,0 +1,558 @@
+{
+  "provenance": {
+    "sourceUrl": "https://www.tyoelamatieto.fi/tellu-data/data/occupational-diseases/occupational-diseases-data-20052026.zip",
+    "bytes": 292234,
+    "sha256": "ad2261e1bcc95b68d852e96e7718b740ee5bbcb3a15c70d6e6d5fd80ece5713f",
+    "sourceFile": "data_2019_2023/data_C_2019_2023.tsv",
+    "dataRows": 6669,
+    "verifiedOn": "2026-10-17",
+    "dataLicense": "CC BY 4.0",
+    "geometryLicense": "MIT",
+    "geometryCopyright": [
+      "Copyright (c) 2017 Lucify",
+      "Copyright (c) 2018 FIOH"
+    ],
+    "geometryFile": "finRegionsTopojson/finRegionsGeo.geojson"
+  },
+  "years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "regions": [
+    {
+      "code": 1,
+      "name": "Uusimaa",
+      "nameSource": "codebook",
+      "geometryName": "Uusimaa",
+      "cells": {
+        "2019": {
+          "status": "published",
+          "count": 141
+        },
+        "2020": {
+          "status": "published",
+          "count": 238
+        },
+        "2021": {
+          "status": "published",
+          "count": 583
+        },
+        "2022": {
+          "status": "published",
+          "count": 486
+        },
+        "2023": {
+          "status": "published",
+          "count": 243
+        }
+      }
+    },
+    {
+      "code": 2,
+      "name": "Varsinais-Suomi",
+      "nameSource": "codebook",
+      "geometryName": "Varsinais-Suomi",
+      "cells": {
+        "2019": {
+          "status": "published",
+          "count": 66
+        },
+        "2020": {
+          "status": "published",
+          "count": 92
+        },
+        "2021": {
+          "status": "published",
+          "count": 188
+        },
+        "2022": {
+          "status": "published",
+          "count": 315
+        },
+        "2023": {
+          "status": "published",
+          "count": 107
+        }
+      }
+    },
+    {
+      "code": 4,
+      "name": "Satakunta",
+      "nameSource": "codebook",
+      "geometryName": "Satakunta",
+      "cells": {
+        "2019": {
+          "status": "published",
+          "count": 24
+        },
+        "2020": {
+          "status": "published",
+          "count": 27
+        },
+        "2021": {
+          "status": "published",
+          "count": 53
+        },
+        "2022": {
+          "status": "published",
+          "count": 64
+        },
+        "2023": {
+          "status": "published",
+          "count": 49
+        }
+      }
+    },
+    {
+      "code": 5,
+      "name": "Kanta-Häme",
+      "nameSource": "codebook",
+      "geometryName": "Kanta-Häme",
+      "cells": {
+        "2019": {
+          "status": "published",
+          "count": 9
+        },
+        "2020": {
+          "status": "published",
+          "count": 13
+        },
+        "2021": {
+          "status": "published",
+          "count": 68
+        },
+        "2022": {
+          "status": "published",
+          "count": 85
+        },
+        "2023": {
+          "status": "published",
+          "count": 44
+        }
+      }
+    },
+    {
+      "code": 6,
+      "name": "Pirkanmaa",
+      "nameSource": "codebook",
+      "geometryName": "Pirkanmaa",
+      "cells": {
+        "2019": {
+          "status": "published",
+          "count": 85
+        },
+        "2020": {
+          "status": "published",
+          "count": 74
+        },
+        "2021": {
+          "status": "published",
+          "count": 206
+        },
+        "2022": {
+          "status": "published",
+          "count": 352
+        },
+        "2023": {
+          "status": "published",
+          "count": 125
+        }
+      }
+    },
+    {
+      "code": 7,
+      "name": "Päijät-Häme",
+      "nameSource": "codebook",
+      "geometryName": "Päijät-Häme",
+      "cells": {
+        "2019": {
+          "status": "published",
+          "count": 21
+        },
+        "2020": {
+          "status": "published",
+          "count": 14
+        },
+        "2021": {
+          "status": "published",
+          "count": 39
+        },
+        "2022": {
+          "status": "published",
+          "count": 109
+        },
+        "2023": {
+          "status": "published",
+          "count": 26
+        }
+      }
+    },
+    {
+      "code": 8,
+      "name": "Kymenlaakso",
+      "nameSource": "codebook",
+      "geometryName": "Kymenlaakso",
+      "cells": {
+        "2019": {
+          "status": "published",
+          "count": 8
+        },
+        "2020": {
+          "status": "published",
+          "count": 16
+        },
+        "2021": {
+          "status": "published",
+          "count": 49
+        },
+        "2022": {
+          "status": "published",
+          "count": 62
+        },
+        "2023": {
+          "status": "published",
+          "count": 13
+        }
+      }
+    },
+    {
+      "code": 9,
+      "name": "Etelä-Karjala",
+      "nameSource": "codebook",
+      "geometryName": "Etelä-Karjala",
+      "cells": {
+        "2019": {
+          "status": "published",
+          "count": 18
+        },
+        "2020": {
+          "status": "published",
+          "count": 25
+        },
+        "2021": {
+          "status": "published",
+          "count": 23
+        },
+        "2022": {
+          "status": "published",
+          "count": 25
+        },
+        "2023": {
+          "status": "published",
+          "count": 12
+        }
+      }
+    },
+    {
+      "code": 10,
+      "name": "Etelä-Savo",
+      "nameSource": "codebook",
+      "geometryName": "Etelä-Savo",
+      "cells": {
+        "2019": {
+          "status": "published",
+          "count": 20
+        },
+        "2020": {
+          "status": "published",
+          "count": 22
+        },
+        "2021": {
+          "status": "published",
+          "count": 50
+        },
+        "2022": {
+          "status": "published",
+          "count": 50
+        },
+        "2023": {
+          "status": "published",
+          "count": 21
+        }
+      }
+    },
+    {
+      "code": 11,
+      "name": "Pohjois-Savo",
+      "nameSource": "codebook",
+      "geometryName": "Pohjois-Savo",
+      "cells": {
+        "2019": {
+          "status": "published",
+          "count": 55
+        },
+        "2020": {
+          "status": "published",
+          "count": 58
+        },
+        "2021": {
+          "status": "published",
+          "count": 85
+        },
+        "2022": {
+          "status": "published",
+          "count": 134
+        },
+        "2023": {
+          "status": "published",
+          "count": 74
+        }
+      }
+    },
+    {
+      "code": 12,
+      "name": "Pohjois-Karjala",
+      "nameSource": "codebook",
+      "geometryName": "Pohjois-Karjala",
+      "cells": {
+        "2019": {
+          "status": "published",
+          "count": 35
+        },
+        "2020": {
+          "status": "published",
+          "count": 50
+        },
+        "2021": {
+          "status": "published",
+          "count": 69
+        },
+        "2022": {
+          "status": "published",
+          "count": 75
+        },
+        "2023": {
+          "status": "published",
+          "count": 47
+        }
+      }
+    },
+    {
+      "code": 13,
+      "name": "Keski-Suomi",
+      "nameSource": "codebook",
+      "geometryName": "Keski-Suomi",
+      "cells": {
+        "2019": {
+          "status": "published",
+          "count": 32
+        },
+        "2020": {
+          "status": "published",
+          "count": 26
+        },
+        "2021": {
+          "status": "published",
+          "count": 64
+        },
+        "2022": {
+          "status": "published",
+          "count": 75
+        },
+        "2023": {
+          "status": "published",
+          "count": 50
+        }
+      }
+    },
+    {
+      "code": 14,
+      "name": "Etelä-Pohjanmaa",
+      "nameSource": "codebook",
+      "geometryName": "Etelä-Pohjanmaa",
+      "cells": {
+        "2019": {
+          "status": "published",
+          "count": 40
+        },
+        "2020": {
+          "status": "published",
+          "count": 33
+        },
+        "2021": {
+          "status": "published",
+          "count": 67
+        },
+        "2022": {
+          "status": "published",
+          "count": 63
+        },
+        "2023": {
+          "status": "published",
+          "count": 41
+        }
+      }
+    },
+    {
+      "code": 15,
+      "name": "Pohjanmaa",
+      "nameSource": "codebook",
+      "geometryName": "Pohjanmaa",
+      "cells": {
+        "2019": {
+          "status": "published",
+          "count": 23
+        },
+        "2020": {
+          "status": "published",
+          "count": 24
+        },
+        "2021": {
+          "status": "published",
+          "count": 98
+        },
+        "2022": {
+          "status": "published",
+          "count": 50
+        },
+        "2023": {
+          "status": "published",
+          "count": 27
+        }
+      }
+    },
+    {
+      "code": 16,
+      "name": "Keski-Pohjanmaa",
+      "nameSource": "codebook",
+      "geometryName": "Keski-Pohjanmaa",
+      "cells": {
+        "2019": {
+          "status": "published",
+          "count": 18
+        },
+        "2020": {
+          "status": "published",
+          "count": 10
+        },
+        "2021": {
+          "status": "published",
+          "count": 12
+        },
+        "2022": {
+          "status": "published",
+          "count": 23
+        },
+        "2023": {
+          "status": "published",
+          "count": 14
+        }
+      }
+    },
+    {
+      "code": 17,
+      "name": "Pohjois-Pohjanmaa",
+      "nameSource": "codebook",
+      "geometryName": "Pohjois-Pohjanmaa",
+      "cells": {
+        "2019": {
+          "status": "published",
+          "count": 67
+        },
+        "2020": {
+          "status": "published",
+          "count": 69
+        },
+        "2021": {
+          "status": "published",
+          "count": 160
+        },
+        "2022": {
+          "status": "published",
+          "count": 209
+        },
+        "2023": {
+          "status": "published",
+          "count": 92
+        }
+      }
+    },
+    {
+      "code": 18,
+      "name": "Kainuu (ml. Vaala)",
+      "nameSource": "codebook",
+      "geometryName": "Kainuu",
+      "cells": {
+        "2019": {
+          "status": "published",
+          "count": 18
+        },
+        "2020": {
+          "status": "published",
+          "count": 14
+        },
+        "2021": {
+          "status": "published",
+          "count": 20
+        },
+        "2022": {
+          "status": "published",
+          "count": 27
+        },
+        "2023": {
+          "status": "published",
+          "count": 15
+        }
+      }
+    },
+    {
+      "code": 19,
+      "name": "Lappi",
+      "nameSource": "codebook",
+      "geometryName": "Lappi",
+      "cells": {
+        "2019": {
+          "status": "published",
+          "count": 30
+        },
+        "2020": {
+          "status": "published",
+          "count": 27
+        },
+        "2021": {
+          "status": "published",
+          "count": 21
+        },
+        "2022": {
+          "status": "published",
+          "count": 45
+        },
+        "2023": {
+          "status": "published",
+          "count": 23
+        }
+      }
+    },
+    {
+      "code": 21,
+      "name": "Ahvenanmaa",
+      "nameSource": "geometry",
+      "geometryName": "Ahvenanmaa",
+      "cells": {
+        "2019": {
+          "status": "outside_scope",
+          "count": null
+        },
+        "2020": {
+          "status": "outside_scope",
+          "count": null
+        },
+        "2021": {
+          "status": "outside_scope",
+          "count": null
+        },
+        "2022": {
+          "status": "outside_scope",
+          "count": null
+        },
+        "2023": {
+          "status": "outside_scope",
+          "count": null
+        }
+      }
+    }
+  ]
+}

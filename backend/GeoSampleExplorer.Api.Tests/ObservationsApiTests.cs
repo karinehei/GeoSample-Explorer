@@ -32,6 +32,28 @@ public class ObservationsApiTests : IClassFixture<GeoSampleExplorerWebApplicatio
     }
 
     [Fact]
+    public async Task GetAll_FilterByTypePrefix_DoesNotMatchLongerType()
+    {
+        var response = await _client.GetAsync("/api/observations?type=So");
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        var observations = await response.Content.ReadFromJsonAsync<ObservationDto[]>(JsonOptions);
+        Assert.NotNull(observations);
+        Assert.DoesNotContain(observations, o => o.Type == "Soil");
+    }
+
+    [Fact]
+    public async Task GetAll_FilterByRegionPrefix_DoesNotMatchLongerRegion()
+    {
+        var response = await _client.GetAsync("/api/observations?region=Nor");
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        var observations = await response.Content.ReadFromJsonAsync<ObservationDto[]>(JsonOptions);
+        Assert.NotNull(observations);
+        Assert.DoesNotContain(observations, o => o.Region == "North");
+    }
+
+    [Fact]
     public async Task GetAll_FilterByType_ReturnsOnlyMatchingObservations()
     {
         var response = await _client.GetAsync("/api/observations?type=Soil");
