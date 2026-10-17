@@ -179,7 +179,9 @@ export function WorklifeRegionsApp() {
           Luvut ovat julkaistun otteen säilytettyjä tapauksia. Yksikkö on tapaus, ei väestöön suhteutettu luku.
         </p>
         <nav>
-          <a href={`${import.meta.env.BASE_URL}index.html`}>GeoSample Explorerin havainnot</a>
+          <a href="https://github.com/karinehei/GeoSample-Explorer#installation--run">
+            Havaintoesimerkki paikallisesti (README)
+          </a>
         </nav>
       </header>
       <div className="worklife-body">

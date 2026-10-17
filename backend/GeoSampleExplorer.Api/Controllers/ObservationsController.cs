@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace GeoSampleExplorer.Api.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/observations")]
 [Produces("application/json")]
 public class ObservationsController : ControllerBase
 {

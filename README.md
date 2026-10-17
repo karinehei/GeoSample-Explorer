@@ -98,8 +98,8 @@ npm install
 npm run dev
 ```
 
-- App: `http://localhost:5173/GeoSample-Explorer/`
 - Regional counts: `http://localhost:5173/GeoSample-Explorer/worklife-regions.html`
+- Observation app (needs the API): `http://localhost:5173/GeoSample-Explorer/observations.html`
 
 ### Tests
 
@@ -233,11 +233,17 @@ The project was developed iteratively with an agile-style approach:
 
 ---
 
-## Regional counts on GitHub Pages
+## Public demo and the observation example
 
-The frontend `base` is `/GeoSample-Explorer/`. Both `index.html` and `worklife-regions.html` are Vite entry points. Public data is loaded with that base, so the regions page works without `VITE_API_BASE_URL`.
+The static research view and the observation example are separate.
 
-Check the production build locally:
+The public entry is the regional counts page. `frontend/index.html` sends visitors to `worklife-regions.html`. That page reads committed aggregates from `/GeoSample-Explorer/worklife/` and does not call the .NET API. On GitHub Pages the site root is that entry:
+
+`https://karinehei.github.io/GeoSample-Explorer/`
+
+The observation application stays in the repository for local use with the API. Open `observations.html` after `dotnet run`. It is not a hosted demo: the Pages site does not run the API, and the regional page links to these installation instructions instead.
+
+Check the production artifact locally:
 
 ```bash
 cd frontend
@@ -245,15 +251,15 @@ npm test
 npm run build
 ```
 
-Serve the `frontend/dist` directory as `/GeoSample-Explorer/` and open `worklife-regions.html`. Reload a URL that includes `year` and `region`, then use the browser Back and Forward buttons.
+Copy `frontend/dist` to a directory named `GeoSample-Explorer` and serve the parent directory. Open `/GeoSample-Explorer/`. It should land on the regional page. Reload a URL that includes `year` and `region`, then use Back and Forward.
 
-Publication is prepared in `.github/workflows/pages.yml` and is manual (`workflow_dispatch`). It has not been run. To publish later:
+Publication is prepared in `.github/workflows/pages.yml` and is manual (`workflow_dispatch`). It has not been run, and the live site has not been checked from this review. To publish later:
 
 1. In the repository settings, set Pages to GitHub Actions.
 2. Run the “GitHub Pages” workflow.
-3. Open `https://karinehei.github.io/GeoSample-Explorer/worklife-regions.html`.
+3. Open `https://karinehei.github.io/GeoSample-Explorer/`.
 
-The observation page on that host still needs a backend URL. The regions page does not.
+That workflow uploads `frontend/dist` only. It does not include the source zip or the case files.
 
 The case counts are © Työterveyslaitos, Työelämätieto, CC BY 4.0. The region geometry is MIT (Lucify 2017, FIOH 2018). See `frontend/public/worklife/GEOMETRY-LICENSE.txt`.
 

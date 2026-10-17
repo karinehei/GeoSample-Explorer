@@ -5,11 +5,13 @@ on:
     branches: [main, develop]
     paths:
       - 'backend/**'
+      - 'global.json'
       - '.github/workflows/backend-build.yml'
   pull_request:
     branches: [main, develop]
     paths:
       - 'backend/**'
+      - 'global.json'
       - '.github/workflows/backend-build.yml'
 
 jobs:
@@ -23,6 +25,7 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
+          global-json-file: global.json
 
       - name: Restore
         run: dotnet restore backend/GeoSampleExplorer.sln

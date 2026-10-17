@@ -32,6 +32,7 @@ export default function App() {
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [apiUnavailable, setApiUnavailable] = useState(false);
 
   const [formMode, setFormMode] = useState<FormMode>(null);
   const [editingObservation, setEditingObservation] = useState<Observation | null>(null);
@@ -42,7 +43,9 @@ export default function App() {
     try {
       const data = await fetchObservations();
       setCatalog(data);
+      setApiUnavailable(false);
     } catch (e) {
+      setApiUnavailable(true);
       setError(e instanceof Error ? e.message : 'Failed to load filter options');
     }
   }, []);
@@ -57,7 +60,9 @@ export default function App() {
         region: filters.region || undefined,
       });
       setObservations(data);
+      setApiUnavailable(false);
     } catch (e) {
+      setApiUnavailable(true);
       setError(e instanceof Error ? e.message : 'Failed to load observations');
     } finally {
       setLoading(false);
@@ -218,6 +223,13 @@ export default function App() {
           {error && (
             <div style={{ ...commonStyles.errorBanner, marginTop: 8, padding: 8 }} role="alert">
               {error}
+              {apiUnavailable && (
+                <p style={{ margin: '8px 0 0' }}>
+                  This observation example needs the local API described in the{' '}
+                  <a href="https://github.com/karinehei/GeoSample-Explorer#installation--run">README</a>.
+                  The hosted regional counts page does not use it.
+                </p>
+              )}
             </div>
           )}
         </>

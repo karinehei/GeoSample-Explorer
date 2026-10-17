@@ -11,6 +11,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
+        observations: 'observations.html',
         worklife: 'worklife-regions.html',
       },
     },
