@@ -77,7 +77,7 @@ GeoSample Explorer allows users to browse, filter, and manage field observations
 ### Prerequisites
 
 - **Node.js** 18+ and npm
-- **.NET 8 SDK**
+- **.NET 8 SDK** (`global.json` stays on the 8.0 feature band)
 
 ### Backend
 
